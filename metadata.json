@@ -1,0 +1,6 @@
+{
+  "name": "緣便當快餐店－中山總店",
+  "description": "緣便當快餐店－中山總店與加盟門市官方網站（現代餐飲電商品牌型線上點餐系統），在地人熟悉的家常好滋味，現點現做、份量實在、線上購物車快速預點。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-serif-tc {
+    font-family: "Noto Serif TC", serif;
+  }
+  .font-sans-tc {
+    font-family: "Noto Sans TC", sans-serif;
+  }
+}
+
+body {
+  font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #EA580C;
+  color: #1A120C;
+}
