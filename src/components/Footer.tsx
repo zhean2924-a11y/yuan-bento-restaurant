@@ -54,6 +54,9 @@ export default function Footer() {
                 <Link to="/news" className="hover:text-[#EA580C] transition-colors py-1 block">
                   最新公告
                 </Link>
+                <Link to="/corporate" className="hover:text-[#EA580C] transition-colors py-1 block font-bold text-white">
+                  企業訂餐
+                </Link>
                 <Link to="/contact" className="hover:text-[#EA580C] transition-colors py-1 block">
                   聯絡訂餐
                 </Link>

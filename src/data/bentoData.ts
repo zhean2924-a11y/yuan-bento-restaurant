@@ -1,5 +1,7 @@
 import { MenuItem, StoreLocation } from '../types';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export const STORE_INFO = {
   name: "緣便當快餐店",
   branch: "中山總店",
@@ -20,7 +22,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 120,
     category: "便當",
     description: "大隻厚實雞腿，外皮酥脆香嫩，份量滿足。",
-    image: "/01-酥炸雞腿飯.png",
+    image: `${BASE_URL}01-酥炸雞腿飯.png`,
     tag: "招牌首選",
     jpName: "フライドチキン定食"
   },
@@ -30,7 +32,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 110,
     category: "便當",
     description: "醇香梅干菜搭配軟嫩扣肉，鹹香甘醇下飯好滋味。",
-    image: "/02-梅干扣肉飯.png",
+    image: `${BASE_URL}02-梅干扣肉飯.png`,
     tag: "古法慢火",
     jpName: "梅干し豚角煮定食"
   },
@@ -40,7 +42,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 110,
     category: "便當",
     description: "嚴選五花肉與秘製五香滷汁燉煮，香醇入味肥瘦勻稱。",
-    image: "/03-五香控肉飯.png",
+    image: `${BASE_URL}03-五香控肉飯.png`,
     tag: "經典飄香",
     jpName: "五香豚角煮定食"
   },
@@ -50,7 +52,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 110,
     category: "便當",
     description: "店家精心特製招牌料理，豐富用料實在滿足。",
-    image: "/04-綠特製招牌飯.png",
+    image: `${BASE_URL}04-綠特製招牌飯.png`,
     tag: "店長特製",
     jpName: "特製看板定食"
   },
@@ -60,7 +62,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 120,
     category: "便當",
     description: "鮮美鯖魚高溫酥炸，外酥內嫩油脂飽滿。",
-    image: "/05-酥炸鯖魚飯.png",
+    image: `${BASE_URL}05-酥炸鯖魚飯.png`,
     tag: "海味鮮香",
     jpName: "サバの竜田揚げ定食"
   },
@@ -70,7 +72,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 110,
     category: "便當",
     description: "經典古早味滷排骨，肉質軟嫩鹹甜適中入味透徹。",
-    image: "/06-滷排骨飯.png",
+    image: `${BASE_URL}06-滷排骨飯.png`,
     tag: "古早甘醇",
     jpName: "煮込み豚カツ定食"
   },
@@ -80,7 +82,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 110,
     category: "便當",
     description: "現炸金黃酥脆排骨，外皮卡滋酥脆肉汁鎖在裡頭。",
-    image: "/07-酥炸排骨飯.png",
+    image: `${BASE_URL}07-酥炸排骨飯.png`,
     tag: "酥香多汁",
     jpName: "サクサク豚カツ定食"
   },
@@ -90,7 +92,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 120,
     category: "便當",
     description: "嚴選牛腩文火細燉，肉質軟爛湯汁濃郁醇厚。",
-    image: "/08-牛腩飯.png",
+    image: `${BASE_URL}08-牛腩飯.png`,
     tag: "慢燉醇香",
     jpName: "牛ブリスケ煮込み定食"
   },
@@ -100,7 +102,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 110,
     category: "便當",
     description: "傳統正庄紅燒豬腳，外皮Q彈膠質滿滿香氣濃郁。",
-    image: "/09-正庄豬腳飯.png",
+    image: `${BASE_URL}09-正庄豬腳飯.png`,
     tag: "膠質豐富",
     jpName: "豚足の醤油煮込み定食"
   },
@@ -110,7 +112,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 110,
     category: "便當",
     description: "鮮嫩雞丁搭配特調辛香醬料快炒，微辣開胃鑊氣十足。",
-    image: "/10-辣子雞丁飯.png",
+    image: `${BASE_URL}10-辣子雞丁飯.png`,
     tag: "鑊氣微辣",
     jpName: "ピリ辛鶏肉炒め定食"
   }

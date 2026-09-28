@@ -11,6 +11,7 @@ export const NAV_LINKS = [
   { label: '品牌理念', to: '/about', sub: 'STORY' },
   { label: '最新公告', to: '/news', sub: 'NEWS' },
   { label: '聯絡訂餐', to: '/contact', sub: 'CONTACT' },
+  { label: '企業訂餐', to: '/corporate', sub: 'CORP' },
   { label: '顧客回饋', to: '/feedback', sub: 'FEEDBACK' },
 ];
 

@@ -4,8 +4,17 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  const targetWebhookUrl =
+    process.env.VITE_N8N_CORPORATE_WEBHOOK_URL && !process.env.VITE_N8N_CORPORATE_WEBHOOK_URL.includes('localhost')
+      ? process.env.VITE_N8N_CORPORATE_WEBHOOK_URL
+      : 'https://perry-pharmacy-integration-rugby.trycloudflare.com/webhook-test/yuan-bento-corporate';
+
   return {
+    base: '/yuan-bento-restaurant/',
     plugins: [react(), tailwindcss()],
+    define: {
+      'import.meta.env.VITE_N8N_CORPORATE_WEBHOOK_URL': JSON.stringify(targetWebhookUrl),
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

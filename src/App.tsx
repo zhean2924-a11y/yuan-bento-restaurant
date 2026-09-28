@@ -17,6 +17,7 @@ import LocationsPage from './pages/LocationsPage';
 import NewsPage from './pages/NewsPage';
 import ContactPage from './pages/ContactPage';
 import FeedbackPage from './pages/FeedbackPage';
+import CorporatePage from './pages/CorporatePage';
 
 function PageRouter() {
   const { currentPath } = useRouter();
@@ -32,6 +33,8 @@ function PageRouter() {
       return <NewsPage />;
     case '/contact':
       return <ContactPage />;
+    case '/corporate':
+      return <CorporatePage />;
     case '/feedback':
       return <FeedbackPage />;
     case '/':

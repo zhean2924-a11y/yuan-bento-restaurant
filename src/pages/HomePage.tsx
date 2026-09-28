@@ -13,6 +13,9 @@ import {
   ExternalLink,
   Bell,
   ChevronRight,
+  Building2,
+  Users,
+  ShieldCheck,
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -403,7 +406,65 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. 最新公告簡短區塊 */}
+      {/* 6. 企業／團體訂餐區塊 (黑色、米白色、橘色品牌風格) */}
+      <section className="pb-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-[#181818] text-white rounded-3xl border border-[#2E2721] p-6 sm:p-10 lg:p-12 shadow-xl relative overflow-hidden">
+          {/* 橘色飾邊背景光暈 */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#EA580C]/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8 space-y-4">
+              <div className="inline-flex items-center space-x-2 text-[#EA580C] text-xs font-bold tracking-widest uppercase bg-[#231C18] px-3 py-1 rounded-full border border-[#EA580C]/20">
+                <Building2 className="w-3.5 h-3.5" />
+                <span>CORPORATE & GROUP MEALS</span>
+              </div>
+
+              <div className="space-y-2">
+                <h2 className="font-serif-tc text-2xl sm:text-3xl lg:text-4xl font-black text-white">
+                  企業會議・團體訂餐
+                </h2>
+                <p className="text-xs sm:text-sm text-[#C5BDB3] max-w-2xl leading-relaxed">
+                  適用於公司會議、教育訓練、活動餐盒與大量訂購。熱鍋現點現做、每日新鮮時蔬配菜、份量實在吃得飽足，並提供完整統一編號開立與專車配送服務。
+                </p>
+              </div>
+
+              {/* 服務特色標籤 */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div className="flex items-center space-x-2 text-xs text-[#D8CEBF] bg-[#221C18] p-2.5 rounded-xl border border-[#332A22]">
+                  <ShieldCheck className="w-4 h-4 text-[#EA580C] shrink-0" />
+                  <span>支援統一編號報帳</span>
+                </div>
+                <div className="flex items-center space-x-2 text-xs text-[#D8CEBF] bg-[#221C18] p-2.5 rounded-xl border border-[#332A22]">
+                  <Users className="w-4 h-4 text-[#EA580C] shrink-0" />
+                  <span>可承接大宗團體訂單</span>
+                </div>
+                <div className="flex items-center space-x-2 text-xs text-[#D8CEBF] bg-[#221C18] p-2.5 rounded-xl border border-[#332A22]">
+                  <Building2 className="w-4 h-4 text-[#EA580C] shrink-0" />
+                  <span>專人確認配送時段</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-stretch lg:items-end justify-center gap-3">
+              <Link
+                to="/corporate"
+                className="inline-flex items-center justify-center space-x-2 px-6 py-4 rounded-xl bg-[#EA580C] hover:bg-[#D84E07] text-white font-bold text-sm shadow-lg transition-all active:scale-95 text-center min-h-[48px]"
+              >
+                <span>立即預約</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/menu"
+                className="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-[#241D19] hover:bg-[#2F2621] text-[#D8CEBF] border border-[#3D3229] font-bold text-xs transition-colors text-center min-h-[44px]"
+              >
+                <span>瀏覽商品菜單</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. 最新公告簡短區塊 */}
       <section className="pb-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl border border-[#E4DCD0] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-5 shadow-2xs">
           <div className="flex items-center space-x-3.5">

@@ -12,18 +12,32 @@ const RouterContext = createContext<RouterContextType>({
 
 export const useRouter = () => useContext(RouterContext);
 
+const BASE_URL = import.meta.env.BASE_URL.replace(/\/+$/, '') || '';
+
 function getPathFromLocation(): string {
-  const pathname = window.location.pathname;
+  // Support GitHub Pages 404 SPA redirect (?/about)
+  const search = window.location.search;
+  if (search.startsWith('?/')) {
+    const redirectedPath = '/' + search.slice(2).split('&')[0].replace(/~and~/g, '&').replace(/\/+$/, '');
+    if (['/about', '/menu', '/locations', '/news', '/contact', '/feedback', '/corporate'].includes(redirectedPath)) {
+      return redirectedPath;
+    }
+  }
+
+  let pathname = window.location.pathname;
+  if (BASE_URL && pathname.startsWith(BASE_URL)) {
+    pathname = pathname.slice(BASE_URL.length) || '/';
+  }
   if (pathname && pathname !== '/') {
     const clean = pathname.replace(/\/+$/, '');
-    if (['/about', '/menu', '/locations', '/news', '/contact', '/feedback'].includes(clean)) {
+    if (['/about', '/menu', '/locations', '/news', '/contact', '/feedback', '/corporate'].includes(clean)) {
       return clean;
     }
   }
   const hash = window.location.hash.replace(/^#\/?/, '/');
   if (hash) {
     const clean = hash.replace(/\/+$/, '');
-    if (['/about', '/menu', '/locations', '/news', '/contact', '/feedback'].includes(clean)) {
+    if (['/about', '/menu', '/locations', '/news', '/contact', '/feedback', '/corporate'].includes(clean)) {
       return clean;
     }
   }
@@ -57,7 +71,8 @@ export function RouterProvider({ children }: { children: ReactNode }) {
     }
 
     try {
-      window.history.pushState({}, '', target);
+      const fullUrl = BASE_URL ? `${BASE_URL}${target === '/' ? '' : target}` || '/' : target;
+      window.history.pushState({}, '', fullUrl);
     } catch {
       window.location.hash = target;
     }
@@ -93,9 +108,10 @@ export function Link({ to, className = '', activeClassName = '', children, onCli
   };
 
   const finalClass = `${className} ${isActive ? activeClassName : ''}`.trim();
+  const href = BASE_URL ? `${BASE_URL}${to === '/' ? '' : to}` || '/' : to;
 
   return (
-    <a href={to} className={finalClass} onClick={handleClick} {...rest}>
+    <a href={href} className={finalClass} onClick={handleClick} {...rest}>
       {children}
     </a>
   );
