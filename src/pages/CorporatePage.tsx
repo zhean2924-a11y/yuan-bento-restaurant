@@ -118,8 +118,12 @@ export default function CorporatePage() {
       return;
     }
 
-    // 診斷測試：直接指定 Cloudflare Webhook 端點，不使用環境變數
-    const n8nWebhookUrl = 'https://perry-pharmacy-integration-rugby.trycloudflare.com/webhook-test/yuan-bento-corporate';
+    // 使用環境變數 VITE_N8N_CORPORATE_WEBHOOK_URL
+    const envWebhookUrl = import.meta.env.VITE_N8N_CORPORATE_WEBHOOK_URL;
+    const n8nWebhookUrl =
+      envWebhookUrl && !envWebhookUrl.includes('localhost')
+        ? envWebhookUrl
+        : 'https://essentially-wants-fewer-diego.trycloudflare.com/webhook/yuan-bento-corporate';
 
     setIsSubmitting(true);
 
